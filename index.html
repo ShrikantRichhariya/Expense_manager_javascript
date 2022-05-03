@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Crud Operation</title>
+    <link type="text/css" rel="stylesheet" href="style.css" <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Simple expense manager project</h1>
+    <div class="top_container">
+
+        <div class="first" style="position: relative;">
+            <p class="side" style="right: 16%;height: 40px; position: relative">
+                <span1 class="span1">Add a new item:</span1>
+            </p>
+            <p class="side" id="newfriend" style="left: 21%; position: relative">Add a friend<i
+                    class="fa fa-plus-circle" style="font-size:36px;color:white"></i>
+            </p>
+        </div>
+        <section class="content1">
+            <div class="form">
+                <table class="firsttable">
+                    <tr>
+                        <td>
+                            <form autocomplete="off" onsubmit="onFormSubmit()" id="mainform">
+                                <div class="form-section field1">
+                                    <label for="type">Type:</label>
+                                    <select id="type">
+                                        <option value=""></option>
+                                        <option value="cash">CASH</option>
+                                        <option value="card">CARD</option>
+                                        <option value="upi">UPI</option>
+                                        <option value="crypto">CRYPTO</option>
+                                    </select>
+                                    <span class="error-msg err-type">can not be empty</span>
+                                </div>
+                                <div class="form-section field2">
+                                    <label for="newfriend">Add Friend:</label>
+                                    <select id="addfriend" multiple>
+                                        <option value=""></option>
+                                    </select>
+                                    <span class="error-msg err-newfriend">Cannot be empty</span>
+                                </div>
+                                <div class="form-section field3">
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" placeholder="What did you spend on?">
+                                    <span class="error-msg err-name">Cannot be empty</span>
+                                </div>
+                                <div class="form-section field4">
+                                    <label for="date">Date:</label>
+                                    <input type="date" id="date">
+                                    <span class="error-msg err-date">Cannot be empty</span>
+                                </div>
+                                <div class="form-section field3">
+                                    <label for="currency">Currency:</label>
+                                    <select id="currency">
+                                        <option value=""></option>
+                                        <option value="USD">USD</option>
+                                        <option value="Rupees">Rupees</option>
+                                        <option value="Euro">Euro</option>
+                                        <option value="pound">Pound</option>
+                                    </select>
+                                    <span class="error-msg err-currency">Cannot be empty</span>
+                                </div>
+                                <div class="form-section field5">
+                                    <label for="amount">Amount:</label>
+                                    <input type="text" id="amount" placeholder="How much?">
+                                    <span class="error-msg err-amount">Cannot be empty</span>
+                                </div>
+                                <button type="submit" class="buttonSave">Add a new expense</button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="content">
+            <td>
+                <table class="list" id="storeList" style=color:rgb(33,20,80)>
+                    <thead>
+                        <tr style="background-color:#90a8d1;">
+                            <th colspan="4">FILTER BY FRIEND:
+                                <select id="cfriend2" onchange="filternameFunction()">
+                                </select>
+                            </th>
+                            <th colspan="4">CURRENCY:
+                                <select id="currency2" onchange="filtercurrencyFunction()">
+                                    <option value="USD">USD($)</option>
+                                    <option value="Rupees">Rupees</option>
+                                    <option value="Euro">Euro</option>
+                                    <option value="pound">Pound</option>
+                                </select>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>TYPE</th>
+                            <th>ADD FRIEND</th>
+                            <th>NAME</th>
+                            <th>DATE</th>
+                            <th>CURRENCY</th>
+                            <th>AMOUNT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+            </td>
+            </tr>
+            </table>
+        </section>
+    </div>
+    </footer>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>
